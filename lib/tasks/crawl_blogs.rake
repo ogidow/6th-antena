@@ -3,11 +3,12 @@ require 'rss'
 namespace :crawl_blogs do
   blogs = ['http://rhythnn.net/rss']
   task :crawl => :environment do
-    blogs.each do |url|
-      data = RSS::Parser.parse(url)
+    blogs.each do |blog|
+      data = RSS::Parser.parse(blog.url)
       article= Article.new
       p article
       data.items.each do |item|
+        next if Article.where(["blog_id = ? AND title = ?", blog.id, item.title]).empty?
         article = Article.new
         article.title = item.title
         article.url = item.link
