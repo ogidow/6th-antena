@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'nokogiri'
+gem 'therubyracer'            # javascript runtime。lessをコンパイルするために必要
+gem 'less-rails'              # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
+gem 'twitter-bootstrap-rails' # Bootstrapの本体
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

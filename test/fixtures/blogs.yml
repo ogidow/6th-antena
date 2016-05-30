@@ -3,11 +3,11 @@
 one:
   name: MyString
   author: MyString
-  image: MyString
   link: MyString
+  image: 
 
 two:
   name: MyString
   author: MyString
-  image: MyString
   link: MyString
+  image: 
