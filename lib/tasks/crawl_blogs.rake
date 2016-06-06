@@ -12,7 +12,7 @@ namespace :crawl_blogs do
     end
     false
   end  
-
+  
   def extract_article_image url
     p url
     charset = nil
@@ -27,7 +27,7 @@ namespace :crawl_blogs do
        f.read
     end
     page = Nokogiri::HTML.parse(html, nil, charset)
-    page.css('//meta[property="og:image"]/@content').to_s   
+    page.css('//meta[property="og:image"]/@content')[0].to_s
   end 
 
   task :crawl => :environment do
