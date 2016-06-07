@@ -40,6 +40,7 @@ gem 'therubyracer'            # javascript runtime。lessをコンパイルす�
 gem 'less-rails'              # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
 gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'addressable' #日本語url対応
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
