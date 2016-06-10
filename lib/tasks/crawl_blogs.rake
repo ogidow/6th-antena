@@ -35,14 +35,15 @@ namespace :crawl_blogs do
     blogs.each do |blog|
       data = RSS::Parser.parse(blog.link)
       data.items.each do |item|
-        next if !Article.where(["blog_id = ? AND title = ?", blog.id, item.title]).empty?
+        publish = item.respond_to?(:pubDate) ? item.pubDate : item.dc_date
+        next if !Article.where(["blog_id = ? AND publish = ?", blog.id, publish]).empty?
         article = Article.new
         article.blog_id = blog.id
         article.title = item.title
 		article.description = item.description
         article.url = item.link
+		article.publish = publish
         article.image = extract_article_image(article.url)
-        article.publish = item.respond_to?(:pubDate) ? item.pubDate : item.dc_date
         article.save
       end
     end 

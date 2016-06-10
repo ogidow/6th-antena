@@ -11,7 +11,7 @@ namespace :init_db do
       ]
 
       blogs.each do |blog|
-		next if !Blog.find_by_author(blog['author']).empty?
+		next if !Blog.find_by_author(blog['author']).nil?
         obj = Blog.new
         obj.name = blog[:name]
         obj.author = blog[:author]
