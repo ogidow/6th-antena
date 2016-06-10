@@ -8,7 +8,7 @@ namespace :init_db do
         {name: "おいしい記録", author: "えっこ", image: "https://pbs.twimg.com/profile_images/731981652746862592/I1dIyde1.jpg", link: "http://ekko-nomy.jugem.jp/?mode=rss"},
         {name: "ogidowの日記", author: "おぎどー", image: "https://pbs.twimg.com/profile_images/734659407963815936/oxYPIVNz.jpg", link: "http://ogidow.hateblo.jp/rss"},	
         {name: "めまい", author: "ながみー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://ngmnda.tumblr.com/rss"},
-        {name: "おとしものけいじばん", author: "あらやん", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "mrkmrk.tumblr.com/rss"}
+        {name: "おとしものけいじばん", author: "あらやん", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://mrkmrk.tumblr.com/rss"}
       ]
 
       blogs.each do |blog|
