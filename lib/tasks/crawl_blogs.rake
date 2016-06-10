@@ -39,6 +39,7 @@ namespace :crawl_blogs do
         article = Article.new
         article.blog_id = blog.id
         article.title = item.title
+		article.description = item.description
         article.url = item.link
         article.image = extract_article_image(article.url)
         article.publish = item.respond_to?(:pubDate) ? item.pubDate : item.dc_date
