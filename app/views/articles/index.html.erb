@@ -1,8 +1,7 @@
 <%= stylesheet_link_tag "main" %>
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
 <div id='content'>
 	<% @articles.each do |article| %>
+	<%= link_to article.url do %>
 	<table class="table table-striped">	
 		<tbody>
 			<tr>
@@ -10,10 +9,11 @@
 			</tr>
 			<tr>
 				<td><%= image_tag(article.image, size: "250x250") %></td>
-				<td rawspan='2'><%= link_to truncate(article.description, :length => 400), article.url %></td>
+				<td rawspan='2'><%= truncate(article.description, :length => 400) %></td>
 			</tr>
 		</tbody>
 	</table>
+	<% end %>
 	<% end %>
 	<%= paginate @articles %>
 </div>
