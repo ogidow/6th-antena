@@ -2,14 +2,16 @@
 <div id='content'>
 	<% @articles.each do |article| %>
 	<%= link_to article.url do %>
-	<table class="table table-striped">	
+	<table class="table table-responsive">	
 		<tbody>
 			<tr>
 				<td colspan="2"  class="title"><%= article.title %></td>
 			</tr>
 			<tr>
 				<td><%= image_tag(article.image, size: "250x250") %></td>
-				<td rawspan='2'><%= truncate(article.description, :length => 50) %></td>
+			</tr>
+			<tr>
+				<td rawspan='2'><%= truncate(article.description, :length => 100) %></td>
 			</tr>
 		</tbody>
 	</table>
