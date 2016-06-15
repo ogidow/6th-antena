@@ -10,12 +10,12 @@ namespace :init_db do
         {name: "めまい", author: "ながみー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://ngmnda.tumblr.com/rss"},
         {name: "おとしものけいじばん", author: "あらやん", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://mrkmrk.tumblr.com/rss"},
         {name: "tea", author: "てぃーみき", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://taimogu.hatenablog.com/rss"},
-        {name: "おじ記", author: "りょー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://ry023.hatenablog.jp/rss"}
-
+        {name: "おじ記", author: "りょー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://ry023.hatenablog.jp/rss"},
+        {name: "雑記", author: "ながみー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://sakana-kh.hateblo.jp/rss"}
       ]
 
       blogs.each do |blog|
-		next if !Blog.find_by_author(blog[:author]).nil?
+		next if !Blog.find_by_author(blog[:name]).nil?
 				p blog
         obj = Blog.new
         obj.name = blog[:name]
