@@ -1,4 +1,4 @@
-require 'rss'
+require 'feed-normalizer'
 require 'addressable/uri'
 require 'nokogiri'
 require 'open-uri'
@@ -33,16 +33,17 @@ namespace :crawl_blogs do
   task :crawl => :environment do
     blogs = Blog.all
     blogs.each do |blog|
-      data = RSS::Parser.parse(blog.link)
+      data =  FeedNormalizer::FeedNormalizer.parse(open(blog.link))
       data.items.each do |item|
-        publish = item.respond_to?(:pubDate) ? item.pubDate : item.dc_date
-        next if !Article.where(["blog_id = ? AND publish = ?", blog.id, publish]).empty?
+        next if !Article.where(["blog_id = ? AND publish = ?", blog.id, item.date_published]).empty?
         article = Article.new
         article.blog_id = blog.id
         article.title = item.title
-		article.description = item.description
-        article.url = item.link
-		article.publish = publish
+
+        description = !item.description.nil? ? item.description : item.content
+        article.description = description
+        article.url = item.url
+        article.publish = item.date_published
         article.image = extract_article_image(article.url)
         article.save
       end
