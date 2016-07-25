@@ -11,7 +11,9 @@ namespace :init_db do
         {name: "おとしものけいじばん", author: "あらやん", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://mrkmrk.tumblr.com/rss"},
         {name: "tea", author: "てぃーみき", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://taimogu.hatenablog.com/rss"},
         {name: "おじ記", author: "りょー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://ry023.hatenablog.jp/rss"},
-        {name: "雑記", author: "ながみー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://sakana-kh.hateblo.jp/rss"}
+        {name: "雑記", author: "ながみー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://sakana-kh.hateblo.jp/rss"},
+        {name: "qiita(しもじゅー)", author: "しもじゅー", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://qiita.com/shimoju/feed"},
+        {name: "qiita(すん)", author: "すん", image: "https://pbs.twimg.com/profile_images/729591236995088384/o_lxityc.jpg", link: "http://qiita.com/Asuforce/feed"},
       ]
 
       blogs.each do |blog|
