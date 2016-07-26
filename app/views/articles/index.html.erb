@@ -1,21 +1,15 @@
-<%= stylesheet_link_tag "main" %>
-<div id='content'>
-	<% @articles.each do |article| %>
-	<%= link_to article.url do %>
-	<table class="table table-responsive">	
-		<tbody>
-			<tr>
-				<td colspan="2"  class="title"><%= article.title %></td>
-			</tr>
-			<tr>
-				<td><%= image_tag(article.image, size: "250x250") %></td>
-			</tr>
-			<tr>
-				<td rawspan='2'><%= truncate(article.description, :length => 100) %></td>
-			</tr>
-		</tbody>
-	</table>
-	<% end %>
-	<% end %>
+  <ol class="articles">
+	  <% @articles.each do |article| %>
+	    <%= link_to article.url, class: :content do %>
+        <div id="article-<%= article.id %>">
+          <%= image_tag(article.image, size: "250x250", class: "icon") %>
+          <span class="article-title"><%= article.title %></span>
+          <span class="description"><%= truncate(article.description, :length => 150)%> </span>
+          <span class="timestamp">
+            <%= article.publish %>
+          </span>
+        </div>
+	    <% end %>
+	  <% end %>
+  </ol>
 	<%= paginate @articles %>
-</div>
