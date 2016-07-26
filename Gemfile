@@ -42,6 +42,7 @@ gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'addressable' #日本語url対応
 gem 'kaminari'
 gem 'sanitize'
+gem 'feed-normalizer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
